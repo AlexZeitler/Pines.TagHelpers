@@ -1,6 +1,6 @@
 # Pines.TagHelpers
 
-![Logo](icon.png)
+![Logo](https://raw.githubusercontent.com/AlexZeitler/Pines.TagHelpers/main/icon.png)
 
 [![NuGet](https://img.shields.io/nuget/v/Pines.TagHelpers.svg)](https://www.nuget.org/packages/Pines.TagHelpers)
 [![NuGet](https://img.shields.io/nuget/dt/Pines.TagHelpers.svg)](https://www.nuget.org/packages/Pines.TagHelpers)
@@ -40,7 +40,7 @@ Add the `Pines.TagHelpers` to your `_ViewImports.cshtml`:
 
 Preview:
 
-![Copy to Clipboard](assets/copy-to-clipboard.png)
+![Copy to Clipboard](https://raw.githubusercontent.com/AlexZeitler/Pines.TagHelpers/main/assets/copy-to-clipboard.png)
 
 ## Want to contribute?
 
