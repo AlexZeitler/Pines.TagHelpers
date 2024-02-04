@@ -1,0 +1,25 @@
+{
+  "name": "pines-taghelpers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexZeitler/Pines.TagHelpers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexZeitler/Pines.TagHelpers/issues"
+  },
+  "homepage": "https://github.com/AlexZeitler/Pines.TagHelpers#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "husky": "^7.0.4"
+  }
+}
