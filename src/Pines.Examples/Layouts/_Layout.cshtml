@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0"
+        name="viewport"/>
+  <title>@ViewData["Title"] - Pines.Examples</title>
+  <link asp-append-version="true"
+        href="~/css/site.css"
+        rel="stylesheet"/>
+  <script src="lib/alpinejs/dist/cdn.min.js"></script>
+</head>
+<body>
+@RenderBody()
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
