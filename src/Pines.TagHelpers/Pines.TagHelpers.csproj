@@ -7,6 +7,21 @@
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <RootNamespace>Pines</RootNamespace>
   </PropertyGroup>
+  
+  <PropertyGroup>
+    <LangVersion>Latest</LangVersion>
+    <IsPackable>true</IsPackable>
+    <PackageId>Pines.TagHelpers</PackageId>
+    <Authors>Alexander Zeitler</Authors>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/alexzeitler/Pines.TagHelpers</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>web,javascript,alpine,tailwind,css,ui,components</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>
+      Adds ASP.NET Core tag helpers to make use of the Pines Alpine.js + Tailwind CSS UI components library.
+    </Description>
+  </PropertyGroup>
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
@@ -19,6 +34,28 @@
   <ItemGroup>
     <PackageReference Include="Alpine.TagHelpers" Version="0.2.0" />
     <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\icon.png" Pack="true" PackagePath="">
+      <Link>Properties\icon.png</Link>
+    </None>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MinVer" Version="2.5.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
