@@ -1,3 +1,4 @@
+@using Tailwind.Heroicons
 @{
   ViewBag.Title = "Copy to Clipboard";
   Layout = "_Layout";
@@ -7,11 +8,28 @@
 
 <div class="text-gray-500 py-2">An element that will copy text to clipboard when clicked.</div>
 
+<div class="flex flex-col space-y-2">
 
-<div class="relative z-20 flex items-center justify-center w-1/2">
-  <div class="relative w-full bg-white border rounded-md border-neutral-200">
-    <div class="min-h-[250px] rounded-md w-full sm:p-10 p-4 box-border flex items-center justify-center">
-      <copy-to-clipboard text="Some text"></copy-to-clipboard>
+  <h3 class="text-md text-gray-700 font-semibold">Default behaviour</h3>
+
+  <div class="relative z-20 flex items-center justify-center w-1/2 pb-4">
+    <div class="relative w-full bg-white border rounded-md border-neutral-200">
+      <div class="min-h-[250px] rounded-md w-full sm:p-10 p-4 box-border flex items-center justify-center">
+        <copy-to-clipboard text="Some text"></copy-to-clipboard>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="text-md text-gray-700 font-semibold">Custom text and heroicon</h3>
+
+  <div class="relative z-20 flex items-center justify-center w-1/2">
+    <div class="relative w-full bg-white border rounded-md border-neutral-200">
+      <div class="min-h-[250px] rounded-md w-full sm:p-10 p-4 box-border flex items-center justify-center">
+        <copy-to-clipboard icon="IconSymbol.Share"
+                           label="Share"
+                           success-label="Shared!"
+                           text="Some text"></copy-to-clipboard>
+      </div>
     </div>
   </div>
 </div>
