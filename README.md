@@ -16,6 +16,14 @@ You can install the package via NuGet:
 dotnet add package Pines.TagHelpers
 ```
 
+To make the Tailwind CSS classes used by `Pines.TagHelpers` work, you need to add the following file to your project:
+
+https://github.com/AlexZeitler/Pines.TagHelpers/blob/main/src/Pines.Examples/static/tailwind.html
+
+Make sure to include it in the `tailwind.config.js` `content` section.
+
+This won't be necessary in the future, as the plan is to include the Tailwind CSS classes in the `Pines.TagHelpers` package.
+
 ## Usage
 
 Add Alpine.js and Tailwind CSS to your `_Layout.cshtml`:
