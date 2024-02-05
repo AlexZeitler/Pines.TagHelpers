@@ -50,6 +50,8 @@ Preview:
 
 ![Copy to Clipboard](https://raw.githubusercontent.com/AlexZeitler/Pines.TagHelpers/main/assets/copy-to-clipboard.png)
 
+More details can be found in the [Pines.Examples project](https://github.com/AlexZeitler/Pines.TagHelpers/tree/main/src/Pines.Examples) in this repository.
+
 ## Want to contribute?
 
 This project is just getting off the ground and could use some help with cleaning things up and refactoring.
