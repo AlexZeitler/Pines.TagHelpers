@@ -4,6 +4,7 @@
 
 [![NuGet](https://img.shields.io/nuget/v/Pines.TagHelpers.svg)](https://www.nuget.org/packages/Pines.TagHelpers)
 [![NuGet](https://img.shields.io/nuget/dt/Pines.TagHelpers.svg)](https://www.nuget.org/packages/Pines.TagHelpers)
+[![Discord](https://img.shields.io/discord/1070453198000767076)](https://discord.gg/pR6duvNHtV)
 
 Pines.TagHelpers is a collection of ASP.NET Core TagHelpers based on
 the [Pines UI components library](https://devdojo.com/pines) using Alpine.js and Tailwind CSS.
@@ -67,6 +68,8 @@ We're using [conventional commits](https://www.conventionalcommits.org), so plea
 ### Discussions
 
 If you want to discuss an `Pines.TagHelpers` issue or PR in more detail, feel free to [start a discussion](https://github.com/AlexZeitler/Pines.TagHelpers/discussions).
+
+You can also join our [Discord server](https://discord.gg/pR6duvNHtV) to discuss the project.
 
 ## License
 
