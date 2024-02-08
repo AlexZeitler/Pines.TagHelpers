@@ -1,0 +1,61 @@
+@using Pines.TagHelpers.AccordionTagHelper
+@using Tailwind.Heroicons
+@{
+  ViewBag.Title = "Accordion";
+  Layout = "_Layout";
+}
+
+@{
+  var accordion = new Accordion()
+  {
+    Items = new List<AccordionItem>()
+    {
+      new(preview: "What is Pines?", content: "Pines is a UI library built for AlpineJS and TailwindCSS."),
+      new(preview: "How do I install Pines?", content: "Add AlpineJS and TailwindCSS to your page and then copy and paste any of these elements into your project."),
+      new(preview: "Can I use Pines with other libraries or frameworks?", content: "Absolutely! Pines works with any other library or framework. Pines works especially well with the TALL stack.")
+    }
+  };
+}
+
+@{
+  var accordionWithIcon = new Accordion
+  {
+    Icon = IconSymbol.Plus,
+    Items = new List<AccordionItem>()
+    {
+      new(preview: "What is Pines?", content: "Pines is a UI library built for AlpineJS and TailwindCSS."),
+      new(preview: "How do I install Pines?", content: "Add AlpineJS and TailwindCSS to your page and then copy and paste any of these elements into your project."),
+      new(preview: "Can I use Pines with other libraries or frameworks?", content: "Absolutely! Pines works with any other library or framework. Pines works especially well with the TALL stack.")
+    }
+  };
+}
+
+<h1 class="text-2xl font-semibold">Accordion</h1>
+
+<div class="text-gray-500 py-2">An accordion element to show and hide content.</div>
+<div class="text-sm text-gray-400 pb-4">
+  We are using the AlpineJS <a href="https://alpinejs.dev/plugins/collapse" >collapse plugin</a> in this example. Simply, include it before Alpine.js in your project and you will see the collapse plugin in. <action class=""></action>
+</div>
+
+<div class="flex flex-col space-y-2">
+
+  <h3 class="text-md text-gray-700 font-semibold">Default behaviour</h3>
+
+  <div class="relative z-20 flex items-center justify-center w-full pb-4">
+    <div class="relative w-full bg-white border rounded-md border-neutral-200">
+      <div class=" min-h-[250px] rounded-md w-1/2 sm:p-10 p-4 box-border flex items-start justify-start max-w-lg mx-auto">
+        <accordion accordion="accordion"></accordion>
+      </div>
+    </div>
+  </div>
+
+ <h3 class="text-md text-gray-700 font-semibold">Custom Icon</h3>
+
+  <div class="relative z-20 flex items-center justify-center w-full">
+    <div class="relative w-full bg-white border rounded-md border-neutral-200">
+      <div class=" min-h-[250px] rounded-md w-1/2 sm:p-10 p-4 box-border flex items-start justify-start max-w-lg mx-auto">
+        <accordion accordion="accordionWithIcon" icon=""></accordion>
+      </div>
+    </div>
+  </div>
+</div>

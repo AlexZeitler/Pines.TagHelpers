@@ -31,6 +31,7 @@
 
 @{
   var copyToClipboardLink = new Uri(Url.ActionLink("GetCopyToClipboard", "GetCopyToClipboard")).PathAndQuery;
+  var accordionLink = new Uri(Url.ActionLink("GetAccordion", "GetAccordion")).PathAndQuery;
   var components = new List<NavigationItem>
   {
     new()
@@ -38,6 +39,12 @@
       Text = "Copy to Clipboard",
       Href = copyToClipboardLink,
       Hrefs = new[] { copyToClipboardLink },
+    },
+    new()
+    {
+      Text = "Accordion",
+      Href = accordionLink,
+      Hrefs = new[] { accordionLink }
     }
   };
 }
@@ -53,7 +60,8 @@
   <link asp-append-version="true"
         href="~/css/site.css"
         rel="stylesheet"/>
-  <script src="~/lib/alpinejs/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="~/lib/alpinejs/dist/cdn.min.js"></script>
 </head>
 <body class="h-full">
 <div x-data="{ showSidebar: false }">

@@ -1,0 +1,47 @@
+@model Pines.TagHelpers.AccordionTagHelper.Accordion
+
+<div class="relative w-full mx-auto overflow-hidden text-sm font-normal bg-white border border-gray-200 divide-y divide-gray-200 rounded-md"
+     x-data="{ 
+        activeAccordion: '', 
+        setActiveAccordion(id) { 
+            this.activeAccordion = (this.activeAccordion == id) ? '' : id 
+        } 
+    }">
+  @foreach (var item in Model.Items)
+  {
+    <div class="cursor-pointer group"
+         x-data="{ id: $id('accordion') }">
+      <button @@click="setActiveAccordion(id)"
+              class="flex items-center justify-between w-full p-4 text-left select-none group-hover:underline">
+        <span>@item.Preview</span>
+        @if (Model.Icon == null)
+        {
+          <svg :class="{ 'rotate-180': activeAccordion==id }"
+               class="w-4 h-4 duration-200 ease-out"
+               fill="none"
+               stroke="currentColor"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               stroke-width="2"
+               viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        }
+        else
+        {
+          <heroicon-outline :class="{ 'rotate-180': activeAccordion==id }"
+                            class="w-4 h-4 duration-200 ease-out"
+                            icon="@Model.Icon.Value"></heroicon-outline>
+        }
+      </button>
+      <div x-cloak
+           x-collapse
+           x-show="activeAccordion==id">
+        <div class="p-4 pt-0 opacity-70">
+          @item.Content
+        </div>
+      </div>
+    </div>
+  }
+</div>

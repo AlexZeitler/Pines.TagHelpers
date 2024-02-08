@@ -77,4 +77,8 @@
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <AdditionalFiles Include="Features\GetAccordion\GetAccordion.cshtml" />
+    </ItemGroup>
+
 </Project>
