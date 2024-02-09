@@ -1,5 +1,9 @@
 @model Pines.TagHelpers.AccordionTagHelper.Accordion
 
+@{
+  var quotedIconTransformClasses = $"'{Model.IconTransformClasses}'";
+}
+
 <div class="relative w-full mx-auto overflow-hidden text-sm font-normal bg-white border border-gray-200 divide-y divide-gray-200 rounded-md"
      x-data="{ 
         activeAccordion: '', 
@@ -16,7 +20,7 @@
         <span>@item.Preview</span>
         @if (Model.Icon == null)
         {
-          <svg :class="{ 'rotate-180': activeAccordion==id }"
+          <svg :class="{ @quotedIconTransformClasses: activeAccordion==id }"
                class="w-4 h-4 duration-200 ease-out"
                fill="none"
                stroke="currentColor"
@@ -30,7 +34,7 @@
         }
         else
         {
-          <heroicon-outline :class="{ 'rotate-180': activeAccordion==id }"
+          <heroicon-outline :class="{ @quotedIconTransformClasses: activeAccordion==id }"
                             class="w-4 h-4 duration-200 ease-out"
                             icon="@Model.Icon.Value"></heroicon-outline>
         }

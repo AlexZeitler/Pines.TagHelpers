@@ -22,6 +22,7 @@ public class AccordionItem
 public class Accordion
 {
   public IconSymbol? Icon { get; set; }
+  public string IconTransformClasses { get; set; } = "rotate-180";
   public List<AccordionItem> Items { get; set; } = new();
 }
 

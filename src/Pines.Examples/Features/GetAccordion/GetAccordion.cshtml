@@ -21,6 +21,7 @@
   var accordionWithIcon = new Accordion
   {
     Icon = IconSymbol.Plus,
+    IconTransformClasses = "-rotate-[45deg]",
     Items = new List<AccordionItem>()
     {
       new(preview: "What is Pines?", content: "Pines is a UI library built for AlpineJS and TailwindCSS."),
@@ -49,13 +50,12 @@
     </div>
   </div>
 
-  <h3 class="text-md text-gray-700 font-semibold">Custom Icon</h3>
+  <h3 class="text-md text-gray-700 font-semibold">Custom Icon and CSS Transform</h3>
 
   <div class="relative z-20 flex items-center justify-center w-full">
     <div class="relative w-full bg-white border rounded-md border-neutral-200">
       <div class=" min-h-[250px] rounded-md w-1/2 sm:p-10 p-4 box-border flex items-start justify-start max-w-lg mx-auto">
-        <accordion accordion="accordionWithIcon"
-                   icon=""></accordion>
+        <accordion accordion="accordionWithIcon"></accordion>
       </div>
     </div>
   </div>
