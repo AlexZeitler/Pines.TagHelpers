@@ -6,6 +6,9 @@ namespace Pines.TagHelpers.AccordionTagHelper;
 
 public class AccordionItem
 {
+  public string Preview { get; set; }
+  public string Content { get; set; }
+  
   public AccordionItem(
     string preview,
     string content
@@ -14,9 +17,6 @@ public class AccordionItem
     Preview = preview;
     Content = content;
   }
-
-  public string Preview { get; set; }
-  public string Content { get; set; }
 }
 
 public class Accordion
