@@ -49,7 +49,11 @@ Add the `Pines.TagHelpers` to your `_ViewImports.cshtml`:
 
 Preview:
 
+### Copy to Clipboard
 ![Copy to Clipboard](https://raw.githubusercontent.com/AlexZeitler/Pines.TagHelpers/main/assets/copy-to-clipboard.png)
+
+### Accordion
+![Accordion](https://raw.githubusercontent.com/AlexZeitler/Pines.TagHelpers/main/assets/accordion.png)
 
 More details can be found in the [Pines.Examples project](https://github.com/AlexZeitler/Pines.TagHelpers/tree/main/src/Pines.Examples) in this repository.
 
