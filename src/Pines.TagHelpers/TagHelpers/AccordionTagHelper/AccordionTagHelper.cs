@@ -26,7 +26,7 @@ public class Accordion
   public List<AccordionItem> Items { get; set; } = new();
 }
 
-public class AccordionTagHelper : PartialTagHelperBase.PartialTagHelperBase
+public class AccordionTagHelper : RazorTagHelperBase.RazorTagHelperBase<Accordion>
 {
   [HtmlAttributeName("accordion")] public Accordion Accordion { get; set; }
 
@@ -41,12 +41,7 @@ public class AccordionTagHelper : PartialTagHelperBase.PartialTagHelperBase
     TagHelperOutput output
   )
   {
-    var htmlContent = await RenderPartial(
-      "~/Templates/AccordionTagHelper/AccordionTagHelper.cshtml",
-      Accordion
-    );
-
-    output.SuppressOutput();
-    output.PreContent.AppendHtml(htmlContent);
+    SetPartialName("~/Templates/AccordionTagHelper/AccordionTagHelper.cshtml", Accordion);
+    await base.ProcessAsync(context, output);
   }
 }

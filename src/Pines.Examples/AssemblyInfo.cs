@@ -2,9 +2,13 @@ using JetBrains.Annotations;
 using Microsoft.AspNetCore.Mvc.Razor;
 
 [assembly: AspMvcViewLocationFormat("~/Features/{1}/{0}.cshtml")]
+[assembly: AspMvcViewLocationFormat("~/Components/{0}/{0}.cshtml")]
+[assembly: AspMvcViewLocationFormat("~/Components/{1}/{0}.cshtml")]
 [assembly: AspMvcViewLocationFormat("~/Layouts/{0}.cshtml")]
 [assembly: AspMvcPartialViewLocationFormat("~/Features/{1}/{0}.cshtml")]
 [assembly: AspMvcPartialViewLocationFormat("~/Layouts/{0}.cshtml")]
+[assembly: AspMvcPartialViewLocationFormat("~/Components/{0}/{0}.cshtml")]
+[assembly: AspMvcPartialViewLocationFormat("~/Components/{1}/{0}.cshtml")]
 
 namespace Pines.Examples;
 
@@ -24,8 +28,8 @@ public class FeatureFolderLocationExpander : IViewLocationExpander
   {
     return new[]
     {
-      "~/Features/{1}/{0}.cshtml",
-      "~/Layouts/{0}.cshtml",
+      "~/Features/{1}/{0}.cshtml", "~/Layouts/{0}.cshtml", "~/Components/{0}/{0}.cshtml",
+      "~/Components/{1}/{0}.cshtml"
     };
   }
 }

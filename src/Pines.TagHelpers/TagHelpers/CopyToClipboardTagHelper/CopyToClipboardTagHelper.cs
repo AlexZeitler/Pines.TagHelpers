@@ -2,6 +2,7 @@ using Alpine.TagHelpers;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Newtonsoft.Json;
+using Pines.TagHelpers.RazorTagHelperBase;
 using Tailwind.Heroicons;
 
 namespace Pines.TagHelpers.CopyToClipboardTagHelper;
@@ -25,7 +26,7 @@ public class CopyToClipboardTagHelperOptions
     ";
 }
 
-public class CopyToClipboardTagHelper : PartialTagHelperBase.PartialTagHelperBase
+public class CopyToClipboardTagHelper : RazorTagHelperBase<Dictionary<string, object?>>
 {
   public CopyToClipboardTagHelper(
     IHtmlHelper htmlHelper
@@ -54,11 +55,12 @@ public class CopyToClipboardTagHelper : PartialTagHelperBase.PartialTagHelperBas
       { "label", Label },
       { "successLabel", SuccessLabel }
     };
-    var someContent = await RenderPartial(
+
+    SetPartialName(
       "~/Templates/CopyToClipboardTagHelper/CopyToClipboardTagHelper.cshtml",
       options
     );
 
-    output.PreContent.AppendHtml(someContent);
+    await base.ProcessAsync(context, output);
   }
 }

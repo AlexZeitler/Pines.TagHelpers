@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using Pines.TagHelpers.RazorTagHelperBase;
 using Tailwind.Heroicons;
 
 namespace Pines.Examples.Components.NavigationItemTagHelper;
@@ -29,7 +30,7 @@ public class NavigationItem
 }
 
 
-public class NavigationItemTagHelper : PartialTagHelperBase.PartialTagHelperBase
+public class NavigationItemTagHelper : RazorTagHelperBase<NavigationItem>
 {
   public NavigationItemTagHelper(
     IHtmlHelper htmlHelper
@@ -37,15 +38,14 @@ public class NavigationItemTagHelper : PartialTagHelperBase.PartialTagHelperBase
   {
   }
 
-  [HtmlAttributeName("item")] public NavigationItem Item { get; set; }
+  [HtmlAttributeName("item")] public NavigationItem? Item { get; set; }
 
   public override async Task ProcessAsync(
     TagHelperContext context,
     TagHelperOutput output
   )
   {
-    var someContent = await RenderPartial("~/Components/NavigationItemTagHelper/NavigationItem.cshtml", Item);
-
-    output.PreContent.AppendHtml(someContent);
+    SetPartialName("NavigationItemTagHelper", Item);
+    await base.ProcessAsync(context, output);
   }
 }
