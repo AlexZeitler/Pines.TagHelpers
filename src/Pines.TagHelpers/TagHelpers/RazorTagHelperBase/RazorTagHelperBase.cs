@@ -59,15 +59,16 @@ public abstract class RazorTagHelperBase<TModel> : TagHelper
     var childContent = (await output.GetChildContentAsync()).GetContent();
 
     IHtmlContent viewContent;
+    
+    output.TagMode = TagMode.StartTagAndEndTag;
+    output.SuppressOutput();
+    
     switch (_allowChildContent)
     {
       case false when !string.IsNullOrWhiteSpace(childContent):
         throw new InvalidOperationException("Invalid child content. Set allowChildContent to true");
       case true:
       {
-        output.TagMode = TagMode.StartTagAndEndTag;
-        output.SuppressOutput();
-
         if (_model is IHasChildContent modelWithChildContent)
           modelWithChildContent.ChildContent = childContent;
         else
